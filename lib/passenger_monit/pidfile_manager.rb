@@ -1,7 +1,7 @@
 module PassengerMonit::PidfileManager
   extend self
   
-  BASENAME = '/var/tmp/rack.*.pid'
+  BASENAME = PassengerMonit.pid_dir + '/rack.*.pid'
   
   def write_pid_file
     pid = Process.pid

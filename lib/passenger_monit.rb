@@ -1,4 +1,8 @@
 module PassengerMonit
+  
+  mattr_accessor :pid_dir
+  @@pid_dir = '/var/tmp'
+  
   class Railtie < Rails::Railtie
     config.before_initialize do
       if defined?(PhusionPassenger)
@@ -12,5 +16,9 @@ module PassengerMonit
         end
       end
     end
+  end
+  
+  def self.setup
+    yield self
   end
 end
