@@ -3,6 +3,9 @@ module PassengerMonit
   mattr_accessor :pid_dir
   @@pid_dir = '/var/tmp'
   
+  mattr_accessor :pid_file
+  @@pid_file = 'rack.*.pid'
+  
   class Railtie < Rails::Railtie
     config.before_initialize do
       if defined?(PhusionPassenger)
